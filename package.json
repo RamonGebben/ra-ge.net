@@ -4,9 +4,11 @@
   "description": "personal website",
   "main": "webpack.config.js",
   "dependencies": {
+    "brace": "^0.5.1",
     "component-playground": "^1.0.0",
     "raw-loader": "^0.5.1",
     "react": "^0.14.0",
+    "react-ace": "^2.6.0",
     "react-dom": "^0.14.0",
     "react-router": "^1.0.0-rc3"
   },
