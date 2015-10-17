@@ -1,0 +1,12 @@
+var tvCheck = require('tv_check');
+var express = require('express');
+var app = express();
+
+
+app.get('/', function( req, res ){
+  if( tvCheck.check( req ) === false ){
+    // Normal code ...
+  } else{
+    // Television code ...
+  };
+});

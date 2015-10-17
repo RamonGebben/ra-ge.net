@@ -20,7 +20,9 @@ var common = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'React ES2015'
+      title: 'Ra-Ge.NET',
+      template: './templates/index.html',
+      inject: 'body'
     })
   ],
 
@@ -31,11 +33,11 @@ var common = {
         loaders: ['react-hot', 'babel?stage=1'],
         include: path.resolve(ROOT_PATH, 'app')
       },
-
       {
         test: /\.css$/,
         loaders: ['style', 'css']
-      }
+    },
+    { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/, loader: "file" }
     ]
   }
 };
