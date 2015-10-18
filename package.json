@@ -8,6 +8,7 @@
     "raw-loader": "^0.5.1",
     "react": "^0.13.3",
     "react-ace": "^2.6.0",
+    "react-google-analytics": "^0.2.0",
     "react-router": "^1.0.0-rc3"
   },
   "devDependencies": {
