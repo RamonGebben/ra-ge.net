@@ -38,13 +38,15 @@ a:hover {
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
     overflow: scroll;
+    background-image: url('http://i.imgur.com/CWynAdQ.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 main {
     height: 100vh;
-    background-image: url('http://i.imgur.com/CWynAdQ.png');
-    background-size: cover;
-    background-repeat: no-repeat;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -69,6 +71,8 @@ section, main {
     text-align: center;
     line-height: 2em;
     max-width: 600px;
+    margin-bottom: 1em;
+    margin: 0 auto;
     -webkit-align-self: center;
         -ms-flex-item-align: center;
             align-self: center;
@@ -96,18 +100,28 @@ section, main {
     text-align: center;
 }
 
-.button:hover {
+.button:hover,
+.back_button:hover,
+.back_button:link:hover,
+.back_button:visited:hover {
     background-color: #58C554;
     color: #161616;
     -webkit-transition: all .3s ease-out;
             transition: all .3s ease-out;
 }
 
-.back_button {
-    color: #eee;
+.back_button,
+.back_button:visited,
+.back_button:link {
     text-decoration: none;
     position: fixed;
     bottom: 1em; left: 1em;
+    color: #58C554;
+    padding: 0.8em;
+    border: 1px solid #58C554;
+    border-radius: 4px;
+    -webkit-transition: all .3s ease-out;
+            transition: all .3s ease-out;
 }
 
 .Projects {
@@ -208,7 +222,6 @@ section, main {
     animation:         fadeIn .6s forwards;
 }
 
-/*Animations*/
 
 @-webkit-keyframes fadeIn {
   0%   { opacity: 0; filter: alpha(opacity=0); }
@@ -220,14 +233,40 @@ section, main {
 }
 
 
-
-/*SPACE*/
-
-
-
 @media screen and (max-width: 800px){
 
- #editor, #ace_editor{ display: none; }
+    #editor, #ace_editor { display: none; }
+    #preview { max-width: 100%;  }
+    #preview main { display: block; }
+    #preview .person { margin-bottom: 1em; }
+    #preview .name { font-size: 4em; }
 
- #preview{ max-width: 100%; }
+    .Projects {
+        flex-direction: column-reverse;
+    }
+
+    .project {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    .project_description,
+    .project_image {
+        width: 100%;
+        float: none;
+    }
+    .project_image {
+        height: 20vh;
+        background-size: cover;
+        background-position: top;
+    }
+
+    .back_button,
+    .back_button:visited,
+    .back_button:link {
+        bottom: auto;
+        top: 1em;
+        z-index: 6;
+    }
 }
